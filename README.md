@@ -1,7 +1,18 @@
 ![AMALL](http://i56.tinypic.com/qy5xxf.png)
 
 # Contributing
-To contribute changes to AMALL, just fork and send a pull request.  Please remember to make your changes in BOTH BROWSERS and test.
+To contribute changes to AMALL, just fork and send a pull request.  Please remember to make your changes in MULTIPLE BROWSERS and test.
+
+# Install
+Amall.user.js should be working fine in 
+* Firefox + Greasemonkey
+* Chrome (native)
+* Chrome + Tampermonkey
+* Opera (native)
+* Opera + Violentmonkey
+* Safari + Ninjakit
+For a instruction on how to install this script, take a look at this journal:
+http://dediggefedde.deviantart.com/journal/Using-GM-scripts-with-other-Browser-259622879
 
 # License
 The source code is licensed under the MIT License, but all the AMALL branding is mine and only mine; you are not allowed to use it for your own redistributions of my script without my consent first.
