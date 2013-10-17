@@ -10,8 +10,9 @@ Amall.user.js should be working fine in
 * Chrome + Tampermonkey
 * Opera (native)
 * Opera + Violentmonkey
-* Safari + Ninjakit
+* Safari + Ninjakit 
 For a instruction on how to install this script, take a look at this journal:
+
 http://dediggefedde.deviantart.com/journal/Using-GM-scripts-with-other-Browser-259622879
 
 # License
