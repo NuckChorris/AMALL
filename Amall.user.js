@@ -5,7 +5,10 @@
 // @match				*://*.deviantart.com/messages/*
 // @match             	*://*.deviantart.com/modal/badge/give?badgetype=llama&*
 // @author				http://dediggefedde.deviantart.com ,http://nuckchorris0.deviantart.com
-// @version				1.0
+// @downloadURL			http://userscripts.org/scripts/source/180137.user.js
+// @updateURL			http://userscripts.org/scripts/source/180137.user.js
+// @version				1.01
+// @grant				GM_getValue 
 // ==/UserScript==
 (function(){
 try {
@@ -38,6 +41,7 @@ try {
 						if(typeof $(this).attr("pruf")!="undefined")return;
 						
 						var u=$(this).parent().find("a.u").html();		
+						if(u==null)return;
 						$(this).attr("pruf",u);
 						
 						DiFi.pushPost("User","getGiveMenu",[u],function (success, data) {
@@ -65,6 +69,7 @@ try {
 					}
 				},1000);
 				var Llama = function(u,s){
+					if(u==null)return;
 					s.addClass('amall-working');					
 					DiFi.pushPost("User","getGiveMenu",[u],function (success, data) {					
 						if (success) {
