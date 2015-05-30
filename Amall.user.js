@@ -2,13 +2,13 @@
 // @name				AMALL
 // @namespace			AMALL
 // @description			makes giving back Llamas on deviantart.com way easer
-// @match				*://*.deviantart.com/messages/*
+// @match				*://*.deviantart.com/notifications/*
 // @match             	*://*.deviantart.com/modal/badge/give?badgetype=llama&*
 // @author				http://dediggefedde.deviantart.com ,http://nuckchorris0.deviantart.com
 // @downloadURL			http://userscripts.org/scripts/source/180137.user.js
 // @updateURL			http://userscripts.org/scripts/source/180137.user.js
-// @version				1.01
-// @grant				GM_getValue 
+// @version				1.02
+// @grant				unsafeWindow
 // ==/UserScript==
 (function(){
 try {
