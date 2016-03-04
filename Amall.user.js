@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name			AMALL
+// @name				AMALL
 // @namespace			AMALL
 // @description			makes giving back Llamas on deviantart.com way easer
-// @match			*://*.deviantart.com/notifications/*
-// @match             		*://*.deviantart.com/modal/badge/give?badgetype=llama&*
-// @author			http://dediggefedde.deviantart.com ,http://nuckchorris0.deviantart.com
+// @match				*://*.deviantart.com/notifications/*
+// @match             	*://*.deviantart.com/modal/badge/give?badgetype=llama&*
+// @author				http://dediggefedde.deviantart.com ,http://nuckchorris0.deviantart.com
 // @downloadURL			http://userscripts.org/scripts/source/180137.user.js
 // @updateURL			http://userscripts.org/scripts/source/180137.user.js
-// @version			1.02
-// @grant			unsafeWindow 
+// @version				1.03
+// @grant				unsafeWindow 
 // ==/UserScript==
 (function(){
 try {
@@ -73,12 +73,16 @@ try {
 					s.addClass('amall-working');					
 					DiFi.pushPost("User","getGiveMenu",[u],function (success, data) {					
 						if (success) {
-							var clicky = $('a:contains(Llama Badge)', data.response.content.html).attr('onclick');									
+							//var clicky = $('a:contains(Llama Badge)', data.response.content.html).attr('onclick');									
 							if (data.response.content.html.indexOf("Give a <span>Llama Badge")===-1){
 								// [STATUS] ALREADY GAVE A LLAMA
 								s.addClass('amall-already').removeClass('amall-working');
 							} else if(data.response.content.html.indexOf("give Llama")==-1){
-								var userNum = /Badges\.buildModal\(\'llama\', (\d+)\)/.exec(clicky)[1];
+								//console.log(clicky);
+								// console.log(data.response.content.html);
+								var userNum= /data-userid="(\d+)"/gi.exec(data.response.content.html)[1];
+                //<input type="hidden" name="to_user" value="32157862" />
+								//var userNum = /Badges\.buildModal\(\'llama\', (\d+)\)/.exec(clicky)[1];
 								$('<iframe>').attr('src',
 								'https://www.deviantart.com/modal/badge/give?badgetype=llama&to_user='+userNum+'&referrer=http://my.deviantart.com&amall=1').css({'display': 'none', 'height': 0, 'width': 0}).appendTo('body').load(function(){
 									s.addClass('amall-success').removeClass('amall-working');
